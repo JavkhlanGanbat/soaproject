@@ -1,0 +1,181 @@
+.formContainer {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e1e5eb;
+  padding-bottom: 16px;
+}
+
+.formHeader h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #8e9aaf;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: #2c3e50;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.formColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formSection {
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.formSection h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #3a506b;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.formField {
+  margin-bottom: 16px;
+}
+
+.formField label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.formField input,
+.formField select,
+.formField textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d9e6;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.formField input:focus,
+.formField select:focus,
+.formField textarea:focus {
+  outline: none;
+  border-color: #5e81ac;
+  box-shadow: 0 0 0 1px rgba(94, 129, 172, 0.2);
+}
+
+.errorField {
+  border-color: #e53e3e !important;
+  background-color: rgba(229, 62, 62, 0.05);
+}
+
+.errorText {
+  color: #e53e3e;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.patientInfo,
+.doctorInfo {
+  background-color: #ebf4ff;
+  border-radius: 4px;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.patientInfo p,
+.doctorInfo p {
+  margin: 4px 0;
+}
+
+.formRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.formRow .formField {
+  flex: 1;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 32px;
+  border-top: 1px solid #e1e5eb;
+  padding-top: 24px;
+}
+
+.cancelButton,
+.saveButton {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancelButton {
+  background-color: white;
+  border: 1px solid #d1d9e6;
+  color: #4a5568;
+}
+
+.cancelButton:hover {
+  background-color: #f8f9fa;
+}
+
+.saveButton {
+  background-color: #4299e1;
+  border: 1px solid #4299e1;
+  color: white;
+}
+
+.saveButton:hover {
+  background-color: #3182ce;
+  border-color: #3182ce;
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .formRow {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

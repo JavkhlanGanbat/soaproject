@@ -1,0 +1,282 @@
+.appointmentSection {
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.headerControls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filterControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filterControls select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--gray-300);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.addButton {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addButton:hover {
+  background-color: var(--primary-light);
+}
+
+.appointmentList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appointmentCard {
+  display: flex;
+  background-color: var(--background);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 4px solid var(--gray-300);
+}
+
+.appointmentCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.appointmentCard.confirmed {
+  border-left-color: var(--primary);
+}
+
+.appointmentCard.waiting {
+  border-left-color: var(--accent);
+}
+
+.appointmentCard.completed {
+  border-left-color: var(--secondary);
+}
+
+.appointmentCard.cancelled {
+  border-left-color: #9e9e9e;
+  opacity: 0.8;
+}
+
+.timeInfo {
+  min-width: 120px;
+  padding-right: 16px;
+  border-right: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.time {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.date {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  margin-bottom: 8px;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  background-color: var(--gray-200);
+}
+
+.confirmed .statusBadge {
+  background-color: rgba(26, 115, 232, 0.1);
+  color: var(--primary);
+}
+
+.waiting .statusBadge {
+  background-color: rgba(234, 67, 53, 0.1);
+  color: var(--accent);
+}
+
+.completed .statusBadge {
+  background-color: rgba(52, 168, 83, 0.1);
+  color: var(--secondary);
+}
+
+.cancelled .statusBadge {
+  background-color: rgba(158, 158, 158, 0.1);
+  color: #9e9e9e;
+}
+
+.appointmentDetails {
+  flex-grow: 1;
+  padding: 0 16px;
+}
+
+.appointmentDetails h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.patientId {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  margin-bottom: 8px;
+}
+
+.reason {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.doctor {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  margin-bottom: 8px;
+}
+
+.contactInfo {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: var(--gray-500);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  min-width: 120px;
+}
+
+.actionButton {
+  background-color: transparent;
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.actionButton:hover {
+  background-color: var(--gray-100);
+}
+
+.completeButton:hover {
+  background-color: rgba(52, 168, 83, 0.1);
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.cancelButton:hover {
+  background-color: rgba(234, 67, 53, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.rescheduleButton:hover {
+  background-color: rgba(26, 115, 232, 0.1);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.formOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.noAppointments {
+  padding: 24px;
+  text-align: center;
+  background-color: var(--background);
+  border-radius: 8px;
+  border: 1px dashed var(--gray-300);
+  color: var(--gray-500);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .headerControls {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .appointmentCard {
+    flex-direction: column;
+  }
+  
+  .timeInfo {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-200);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .appointmentDetails {
+    padding: 12px 0;
+  }
+  
+  .actions {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+}
